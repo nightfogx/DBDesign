@@ -3,7 +3,7 @@
 <template>
                 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
                 @select="handleSelect">
-                <el-menu-item index="0"> <router-link to="/">LOGO</router-link></el-menu-item>
+                <el-menu-item index="0" @click="tomain"> LOGO</el-menu-item>
                 <el-col :span="16" :offset="2">
                     <div class="search">
                         <el-row>
@@ -17,7 +17,7 @@
                     </div>
                 </el-col>
                 <div class="flex-grow" />
-                <el-menu-item index="1"><router-link to="/evaluatepage">维修与回收</router-link></el-menu-item>
+                <el-menu-item index="1" @click="toevaluatepage">维修与回收</el-menu-item>
                 <el-sub-menu index="2">
                     <template #title><router-link to="/profile">个人主页</router-link></template>
                     <el-menu-item index="2-1">item one</el-menu-item>
@@ -40,6 +40,14 @@ export default{
     data(){
         return{
             input: '',
+        }
+    },
+    methods:{
+        tomain(){
+            this.$router.push('/')
+        },
+        toevaluatepage(){
+            this.$router.push('/evaluatepage')
         }
     }
 }

@@ -6,14 +6,14 @@
     <el-container>
       <!-- 搜索栏 --><!-- 导航栏 -->
       <el-header>
-        <seach/>
+        <seach />
       </el-header>
       <!-- 推荐商品 -->
       <el-main>
         <!--卡片推送-->
-        <el-carousel :interval="4000" type="card" height="400px">
-          <el-carousel-item v-for="item in 6" :key="item">
-            <h3 text="2xl" justify="center">{{ item }}</h3>
+        <el-carousel :interval="4000" type="card" height="200px">
+          <el-carousel-item v-for="(image, index) in images" :key="index">
+            <img :src="image" alt="轮播图片">
           </el-carousel-item>
         </el-carousel>
         <!---->
@@ -134,9 +134,11 @@
 <script>
 import { ref } from 'vue'
 import header from '../components/header.vue'
+import axios from 'axios'
 export default {
   data() {
     return {
+      images: [],
       activeIndex: ref('1'),
       products: [
         {
@@ -200,7 +202,21 @@ export default {
     }
   },
   components: {
-    "seach":header,
+    "seach": header,
+  },
+  created() {
+    axios.get('')
+      .then(response => {
+        this.images = response.data.images,        
+        console.log(this.images)
+        console.log(response.data)
+      })
+      axios.get('')
+      .then(response => {
+        this.products = response.data,        
+        console.log(this.products)
+        console.log(response.data)
+      })
   }
 };
 </script>

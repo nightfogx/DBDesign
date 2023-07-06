@@ -71,12 +71,6 @@
                                         </el-icon>
                                         <span>Navigator Ten</span>
                                     </el-menu-item>
-                                    <el-menu-item index="11">
-                                        <el-icon>
-                                            <setting />
-                                        </el-icon>
-                                        <span>Navigator Eleven</span>
-                                    </el-menu-item>
                                 </el-menu>
                             </el-col>
                         </el-row>
@@ -101,11 +95,16 @@
                     </el-row>
                 </el-main>
                 <!--机型部分-->
+
                 <el-footer>
-                    <div class="type">
+                    <el-col :span="5" :offset="4">
+                        <el-pagination background layout="prev, pager, next" :total="100" />
+                    </el-col>
+                    <!--
+                    <div class="type" >
                         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
                             @select="handleSelect">
-                            <el-col :span="4" :offset="1">
+                            <el-col :span="4" >
                                 <el-menu-item index="1">笔记本</el-menu-item>
                             </el-col>
                             <el-col :span="4">
@@ -120,11 +119,11 @@
                             <el-col :span="4">
                                 <el-menu-item index="5">手表</el-menu-item>
                             </el-col>
-                            <el-col :span="3">
+                            <el-col :span="4">
                                 <el-menu-item index="6">智能眼镜</el-menu-item>
                             </el-col>
                         </el-menu>
-                    </div>
+                    </div>-->
                 </el-footer>
             </el-container>
         </el-container>
@@ -151,10 +150,6 @@ export default {
                 { id: 6, },
                 { id: 7, },
                 { id: 8, },
-                { id: 9, },
-                { id: 10, },
-                { id: 11, },
-                { id: 12, },
             ],
             currentDate: ref(new Date()),
 
