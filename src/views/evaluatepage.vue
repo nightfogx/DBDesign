@@ -86,18 +86,19 @@
             <el-container>
                 <!--具体部分-->
                 <el-main>
-                    <div id="Specific">
-                        <el-main>
-                            <el-col :span="55">
-                                <el-table ref="singleTableRef" :data="tableData" highlight-current-row style="width: 100%"
-                                    @current-change="handleCurrentChange">
-                                    <el-table-column prop="name" label="Name" width="420" />
-                                    <el-table-column fixed prop="date" label="Date" width="420" />
-                                    <el-table-column prop="address" label="address" width="420" />
-                                </el-table>
-                            </el-col>
-                        </el-main>
-                    </div>
+                    <el-row> <el-col v-for="item in list" :key="item.id" @click="change(item.id)" :span="4" :offset="1">
+                            <el-card :body-style="{ padding: '0px' }" shadow="hover">
+                                <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                                    class="image" />
+                                <div style="padding: 14px">
+                                    <span>Yummy hamburger</span>
+                                    <div class="bottom">
+                                        <time class="time">{{ currentDate }}</time>
+                                    </div>
+                                </div>
+                            </el-card>
+                        </el-col>
+                    </el-row>
                 </el-main>
                 <!--机型部分-->
                 <el-footer>
@@ -133,50 +134,75 @@
 
 <script>
 import header from '../components/header.vue'
+import { ref } from 'vue'
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: "evaluatepage",
 
     data() {
         return {
-            input: '',
-            tableData: [
-                {
-                    date: '2016-05-03',
-                    name: 'Tom',
-                    address: 'No. 189, Grove St, Los Angeles',
-                },
-                {
-                    date: '2016-05-02',
-                    name: 'Tom',
-                    address: 'No. 189, Grove St, Los Angeles',
-                },
-                {
-                    date: '2016-05-04',
-                    name: 'Tom',
-                    address: 'No. 189, Grove St, Los Angeles',
-                },
-                {
-                    date: '2016-05-01',
-                    name: 'Tom',
-                    address: 'No. 189, Grove St, Los Angeles',
-                },
-            ]
+            key: undefined,
+            list: [
+                { id: 1, },
+                { id: 2, },
+                { id: 3, },
+                { id: 4, },
+                { id: 5, },
+                { id: 6, },
+                { id: 7, },
+                { id: 8, },
+                { id: 9, },
+                { id: 10, },
+                { id: 11, },
+                { id: 12, },
+            ],
+            currentDate: ref(new Date()),
+
         }
     },
     components: {
         "seach": header,
     },
     methods: {
-
+        change(key) {
+            this.key = key;
+            console.log(this.key);
+        }
     }
 }
 </script>
+
+
+<style scoped>
+.time {
+    font-size: 12px;
+    color: #999;
+}
+
+.bottom {
+    margin-top: 13px;
+    line-height: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    padding: 0;
+    min-height: auto;
+}
+
+.image {
+    width: 100%;
+    display: block;
+}
+
 .el-row {
     margin-bottom: 20px;
-  }
-  .type {
+}
+
+.type {
     flex-grow: 1;
-  }
-<style scoped></style>
+}
+</style>
 
