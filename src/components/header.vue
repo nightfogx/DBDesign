@@ -19,19 +19,10 @@
         </el-col>
         <!--右部菜单部分-->
         <div class="flex-grow" />
-        <el-menu-item index="1" @click="toevaluatepage" style="margin-top: 15px ;">维修与回收</el-menu-item>
-        <el-sub-menu index="2" style="margin-top: 15px ;">
+        <el-menu-item index="1" @click="toevaluatepage">维修与回收</el-menu-item>
+        <el-menu-item index="2"  @click="tomainhome">
             <template #title>个人主页</template>
-            <el-menu-item index="2-1">item one</el-menu-item>
-            <el-menu-item index="2-2">item two</el-menu-item>
-            <el-menu-item index="2-3">item three</el-menu-item>
-            <el-sub-menu index="2-4">
-                <template #title>item four</template>
-                <el-menu-item index="2-4-1">item one</el-menu-item>
-                <el-menu-item index="2-4-2">item two</el-menu-item>
-                <el-menu-item index="2-4-3">item three</el-menu-item>
-            </el-sub-menu>
-        </el-sub-menu>
+        </el-menu-item>
     </el-menu>
 </template>
 
@@ -42,7 +33,7 @@ export default {
     name: "header",
     data() {
         return {
-            activeIndex : ref('1'),
+            activeIndex : ref(''),
             logo: require("../assets/project.png"),
             input: '',
         }
@@ -52,10 +43,13 @@ export default {
       console.log(key, keyPath)
     },
         tomain() {
-            this.$router.push('/')
+            this.$router.push('/mainpage')
         },
         toevaluatepage() {
             this.$router.push('/evaluatepage')
+        },
+        tomainhome(){
+            this.$router.push('/MainHome')
         }
     }
 }
