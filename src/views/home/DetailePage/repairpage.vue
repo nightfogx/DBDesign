@@ -41,11 +41,22 @@
         </el-aside>
 
         <el-main>
+<<<<<<< HEAD
+          <el-header style="margin-top: 20px;">
+        <el-steps :active="2" align-center>
+    <el-step title="Step 1" description="Some description" />
+    <el-step title="Step 2" description="Some description" />
+    <el-step title="Step 3" description="Some description" />
+    <el-step title="Step 4" description="Some description" />
+  </el-steps>
+    </el-header>
+=======
           <el-steps :space="400" :active="0" finish-status="fail">
             <el-step title="填写订单信息" />
             <el-step title="确认预约服务" />
             <el-step title="支付订单金额" />
           </el-steps>
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 
           <div class="descriptions-container">
             <h2 class="descriptions-title">在下面表格中请填写你的用户信息</h2>
@@ -104,8 +115,13 @@
 
     <!-- 添加下单按钮 -->
     <div class="order-button">
+<<<<<<< HEAD
+      <el-button type="text" @click="go_center" class="site-details-button">维修站点详情</el-button>
+      <el-button type="primary" @click="goback" class="order-button">返回</el-button>
+=======
       
       <el-button type="text" @click="go_center" class="site-details-button">维修站点详情</el-button>
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
       <el-button type="primary" @click="submitForm" class="order-button">点击下单</el-button>
     </div>
 </template>
@@ -146,13 +162,23 @@ export default {
     },
     go_center() {
       this.$router.push({ name: 'CenterPage' });
+<<<<<<< HEAD
+    },
+    goback() {
+      this.$router.push({ name: 'DetailsPage' });
+=======
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
     }
   }
   
 };
 </script>
 
+<<<<<<< HEAD
+<style scoped>
+=======
 <style>
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 .descriptions-container {
   display: flex;
   flex-direction: column;
@@ -169,10 +195,19 @@ export default {
   margin-left: -200px; /* 调整左边距的值 */
 }
 
+<<<<<<< HEAD
+/* .el-descriptions {
+  background-color: #57387b;
+  width:80%;
+} 
+脑残紫色原因
+*/
+=======
 .el-descriptions {
   background-color: #57387b;
   width:80%;
 }
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 
 .carousel-container {
   width: 100%;

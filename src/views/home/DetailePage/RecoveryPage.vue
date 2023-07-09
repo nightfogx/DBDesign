@@ -15,6 +15,15 @@
 
     <div class="left-panel">
       <img :src="productImage" alt="Device Image" style="height: 400px; width: 400px;"/>
+<<<<<<< HEAD
+
+      <div class="order-button">
+        
+        <el-button type="primary" @click="goback" class="order-button">  返回  </el-button>
+        <el-button type="primary" @click="submitForm" class="order-button">  下单  </el-button>
+      </div>
+=======
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
     </div>
 
 
@@ -90,6 +99,10 @@
   import header from '/src/components/header.vue'
   
   export default {
+<<<<<<< HEAD
+    name:'RecoveryPage',
+=======
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
     props: {
       title: {
         type: String,
@@ -119,7 +132,17 @@
       selectOption(option) {
         this.selectedOption = option;
         this.$emit('option-selected', option);
+<<<<<<< HEAD
+      },
+    submitForm() {
+        this.$router.push({ name: 'recycleprice' });
+    },
+    goback() {
+      this.$router.push({ name: 'DetailsPage' });
+    }
+=======
       }
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
     },
     handleOptionSelected(option) {
         console.log('选中的存储容量:', option);
@@ -136,6 +159,20 @@
   </script>
   
   <style>
+<<<<<<< HEAD
+
+.order-button {
+  display: flex;
+  justify-content: flex-end;
+  
+  margin-top: 10px; /* 调整底部间距 */
+  margin-right: 20px; /* 调整右侧间距 */
+  font-size: 15px; /* 调整按钮字体大小 */
+  padding: 20px 40px; /* 增加按钮内边距 */
+}
+
+=======
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 .__services{
     display: flex;
     margin-bottom: 20px;

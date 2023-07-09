@@ -19,7 +19,11 @@ export default {
 };
 </script>
 
+<<<<<<< HEAD
+<style scoped>
+=======
 <style>
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 .pay-page {
   display: flex;
   flex-direction: column;

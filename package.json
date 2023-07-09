@@ -10,9 +10,11 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "axios": "^1.4.0",
+    "axios-mock-adapter": "^1.21.5",
     "core-js": "^3.8.3",
     "echarts": "^5.4.2",
     "element-plus": "^2.3.7",
+    "mockjs": "^1.1.0",
     "qs": "^6.11.2",
     "vue": "^3.2.13",
     "vue-baidu-map-3x": "^1.0.34",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@types/mockjs": "^1.0.7",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
