@@ -285,7 +285,7 @@ export default {
 }
 </script>
       
-<style>
+<style scoped>
 .PageTop {
     border: 1px solid #ccc;
     width: 1400px;

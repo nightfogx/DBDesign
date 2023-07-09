@@ -1,6 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import mainpage from '../views/mainpage.vue'
 import loginMain from '../views/login_register/loginMain'
+
+
+import RepairPage from '../views/home/DetailePage/repairpage.vue'
+import PricePage from '../views/home/DetailePage/pricepage.vue'
+import PayPage from '../views/home/DetailePage/paypage.vue'
+import CenterPage from '../views/home/CenterPage/CenterPage.vue'
 const routes = [
   {
     path: '/',
@@ -42,8 +48,40 @@ const routes = [
         component: () => import(/*webpackChunkName:'MyAddress'*/ '../views/home/MailAddress/MyAddress.vue')
       }
     ]
-  }
+  },
 
+   {//查看商品详情
+    path: '/DetailsPage',
+    name: 'DetailsPage',
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/DetailsPage.vue')
+  },
+  {//进入回收页
+    path: '/RecoveryPage',
+    name: 'RecoveryPage',
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/RecoveryPage.vue')
+  },
+
+
+  {
+    path: '/repairpage',
+    name: 'repairpage',
+    component: RepairPage
+  },
+  {
+    path: '/pricepage',
+    name: 'pricepage',
+    component: PricePage
+  },
+  {
+    path: '/paypage',
+    name: 'paypage',
+    component: PayPage
+  },
+  {
+    path: '/CenterPage',
+    name: 'CenterPage',
+    component: CenterPage
+  },
 ]
 
 const router = createRouter({
