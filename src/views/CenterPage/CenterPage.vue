@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <search />
     <div>
@@ -215,8 +214,7 @@ export default {
 
 
 <!-- <template>
-=======
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
+
     <div>
       <search/>
       <div>
@@ -408,9 +406,4 @@ export default {
     border-radius: 5px; /* Optional: Add border radius */
     padding: 10px; /* Optional: Add padding */
   }
-  </style>
-<<<<<<< HEAD
-   -->
-=======
-  
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
+  </style>-->

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--最上方的步骤记录条-->
-<<<<<<< HEAD
+
     <el-header style="margin-top: 20px;">
         <el-steps :active="3" align-center>
     <el-step title="Step 1" description="Some description" />
@@ -10,14 +10,13 @@
     <el-step title="Step 4" description="Some description" />
   </el-steps>
     </el-header>
-=======
+
     <el-steps class="center-steps" :space="300" :active="1" finish-status="success">
       <el-step title="填写订单信息" />
       <el-step title="确认预约服务" />
       <el-step title="支付订单金额" />
     </el-steps>
 
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
     <el-table :ref="multipleTableRef" :data="tableData" style="width: 100%" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" />
       <el-table-column label="图片信息" width="180">
@@ -33,11 +32,9 @@
       <el-table-column property="订单金额" label="订单金额" width="150"></el-table-column>
       <el-table-column property="订单状态" label="订单状态" width="100"></el-table-column>
     </el-table>
-<<<<<<< HEAD
-    <div class="spacer"></div> 
-=======
 
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
+    <div class="spacer"></div> 
+
     <div class="spacer"></div> 
     <el-row>
   <el-col :span="8">
@@ -57,10 +54,7 @@
   <div class="total-amount">
       <span class="amount-label">总金额：</span>
       <span class="amount-value">{{ totalAmount }}元</span>
-<<<<<<< HEAD
       <el-button type="primary" @click="goback">返回</el-button>
-=======
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
       <el-button type="primary" @click="handleAppointment">支付</el-button>
     </div>
 
@@ -165,12 +159,11 @@ export default {
       console.log('点击了')
       this.$router.push({ name: 'paypage' })
     },
-<<<<<<< HEAD
+
     goback() {
     this.$router.push({ name: 'repairpage' });
     }
-=======
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
+
   },
 }
 </script>

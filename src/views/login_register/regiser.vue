@@ -11,14 +11,14 @@
             <ElInput placeholder="请输入邮箱" :prefix-icon="icons.Message" v-model="registerForm.email" size="large"></ElInput>
         </ElFormItem>
         <ElFormItem>
-            <ElButton type="primary" class="register-btn" size="large" @click="zhuce">注册</ElButton>
+            <ElButton type="primary" class="register-btn" size="large" >注册</ElButton>
         </ElFormItem>
     </ElForm>
 </template>
 =
   
   <script>
-import {register} from '@/api/login.js'
+
 import * as icons from '@element-plus/icons-vue';
  export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -71,27 +71,6 @@ import * as icons from '@element-plus/icons-vue';
   },
   methods: {
     // 提交表单
-    zhuce(){
-      console.log("点击了注册键")
-      var vm = this;
-      //请求地址,this和vm指的是全局
-      let params = {
-        user: vm. registerForm. username,
-        pass: vm.  registerForm.password,
-        emile: vm. registerForm.email,
-      }
-      console.log(params)
-      register(params).then((res) => {
-          if (res.data === false) {
-            vm.$message.error("注册失败");
-            vm.resetForm();
-          }
-          else {
-            vm.$message.success("注册成功");
-            this.$router.push('/')
-          }
-        })
-    }
   }
 };
     

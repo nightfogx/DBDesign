@@ -231,11 +231,7 @@
     object-fit: cover; /* 填充容器并裁剪 */
   }
   
-<<<<<<< HEAD
-=======
-  
-  
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
+
   .right-section {
     flex: 1;
   }
@@ -281,10 +277,6 @@
     width: 100%;
     height: 200px;
   }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
   </style>
   

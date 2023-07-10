@@ -3,15 +3,19 @@ import mainpage from '../views/mainpage.vue'
 import loginMain from '../views/login_register/loginMain'
 
 
-import RepairPage from '../views/DetailePage/repairpage.vue'
+import RepairPage from '../views/home/DetailePage/repairpage.vue'
+<<<<<<< HEAD
+import RecyclePrice from '../views/home/DetailePage/recycleprice.vue'
+import PricePage from '../views/home/DetailePage/pricepage.vue'
+import PayPage from '../views/home/DetailePage/paypage.vue'
+import CenterPage from '../views/home/CenterPage/CenterPage.vue'
+import CenterPageGoBack from '../views/home/CenterPage/CenterPage.vue'
 
-import RecyclePrice from '../views/DetailePage/recycleprice.vue'
-import PricePage from '../views/DetailePage/pricepage.vue'
-import PayPage from '../views/DetailePage/paypage.vue'
-import CenterPage from '../views/CenterPage/CenterPage.vue'
-import CenterPageGoBack from '../views/CenterPage/CenterPage.vue'
-
-
+=======
+import PricePage from '../views/home/DetailePage/pricepage.vue'
+import PayPage from '../views/home/DetailePage/paypage.vue'
+import CenterPage from '../views/home/CenterPage/CenterPage.vue'
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 const routes = [
   {
     path: '/',
@@ -58,24 +62,24 @@ const routes = [
    {//查看商品详情
     path: '/DetailsPage',
     name: 'DetailsPage',
-    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/DetailePage/DetailsPage.vue')
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/DetailsPage.vue')
   },
   {//进入回收页
-
+<<<<<<< HEAD
     path: '/recoverypage',
     name: 'recoverypage',
-    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/DetailePage/RecoveryPage.vue')
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/RecoveryPage.vue')
 
   },
-  // {
 
-  //   path: '/RecoveryPage',
-  //   name: 'RecoveryPage',
-  //   component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/DetailePage/RecoveryPage.vue')
-  // },
+=======
+    path: '/RecoveryPage',
+    name: 'RecoveryPage',
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/RecoveryPage.vue')
+  },
 
 
-
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
   {
     path: '/repairpage',
     name: 'repairpage',
@@ -87,13 +91,14 @@ const routes = [
     component: PricePage
   },
   {
-
+<<<<<<< HEAD
     path: '/recycleprice',
     name: 'recycleprice',
     component: RecyclePrice
   },
   {
-
+=======
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
     path: '/paypage',
     name: 'paypage',
     component: PayPage
@@ -103,13 +108,14 @@ const routes = [
     name: 'CenterPage',
     component: CenterPage
   },
-
+<<<<<<< HEAD
   {
     path: '/repairpage',
     name: 'CenterPageGoBack',
     component: CenterPageGoBack
   },
-
+=======
+>>>>>>> 47f5e6460ec9df49bc9d7b6f7182896a49838c8e
 ]
 
 const router = createRouter({

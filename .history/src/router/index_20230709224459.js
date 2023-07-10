@@ -1,17 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import mainpage from '../views/mainpage.vue'
 import loginMain from '../views/login_register/loginMain'
-
-
-import RepairPage from '../views/DetailePage/repairpage.vue'
-
-import RecyclePrice from '../views/DetailePage/recycleprice.vue'
-import PricePage from '../views/DetailePage/pricepage.vue'
-import PayPage from '../views/DetailePage/paypage.vue'
-import CenterPage from '../views/CenterPage/CenterPage.vue'
-import CenterPageGoBack from '../views/CenterPage/CenterPage.vue'
-
-
+import RepairPage from '../views/home/DetailePage/repairpage.vue'
+import RecyclePrice from '../views/home/DetailePage/recycleprice.vue'
+import PricePage from '../views/home/DetailePage/pricepage.vue'
+import PayPage from '../views/home/DetailePage/paypage.vue'
+import CenterPage from '../views/home/CenterPage/CenterPage.vue'
+import CenterPageGoBack from '../views/home/CenterPage/CenterPage.vue'
 const routes = [
   {
     path: '/',
@@ -58,22 +53,14 @@ const routes = [
    {//查看商品详情
     path: '/DetailsPage',
     name: 'DetailsPage',
-    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/DetailePage/DetailsPage.vue')
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/DetailsPage.vue')
   },
   {//进入回收页
-
     path: '/recoverypage',
     name: 'recoverypage',
-    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/DetailePage/RecoveryPage.vue')
+    component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/home/DetailePage/RecoveryPage.vue')
 
   },
-  // {
-
-  //   path: '/RecoveryPage',
-  //   name: 'RecoveryPage',
-  //   component: () => import(/* webpackChunkName: "DetailsPage" */ '../views/DetailePage/RecoveryPage.vue')
-  // },
-
 
 
   {
@@ -87,13 +74,6 @@ const routes = [
     component: PricePage
   },
   {
-
-    path: '/recycleprice',
-    name: 'recycleprice',
-    component: RecyclePrice
-  },
-  {
-
     path: '/paypage',
     name: 'paypage',
     component: PayPage
@@ -103,13 +83,6 @@ const routes = [
     name: 'CenterPage',
     component: CenterPage
   },
-
-  {
-    path: '/repairpage',
-    name: 'CenterPageGoBack',
-    component: CenterPageGoBack
-  },
-
 ]
 
 const router = createRouter({

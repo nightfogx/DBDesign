@@ -45,7 +45,6 @@
         <span class="amount-label">总金额：</span>
         <span class="amount-value">{{ totalAmount }}元</span>
         <el-button type="primary" @click="goback">返回</el-button>
-        <el-button type="primary" @click="handleAppointment">支付</el-button>
       </div>
   
   </template>
