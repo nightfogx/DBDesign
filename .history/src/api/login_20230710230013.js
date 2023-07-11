@@ -1,24 +1,18 @@
 import request from '@/utils/request'
 
-
 /*用户登录*/
 export function login(params) {
   return request({
     url: '/LogIn/User',
-    method: 'post',
+    method: 'get',
     params: {
-      User: params.user,
+      UserId: params.user,
      Password: params.pass
    }
   })
 }
-/*拿验证码*/
-export function code() {
-  return request({
-    url: '/LogIn',
-    method: 'get'
-  })
-}
+
+
 /*假设有管理员登陆 */
 /*export function adminlogin(params) {
   return request({
@@ -46,6 +40,16 @@ export function register(params) {
   })
 }
 
+/*需要发送验证码*/
+export function SendMail(params) {
+  return request({
+    url: '/Login/SendMailUseZj',
+    method: 'get',
+    params: {
+      aa: params.mail_id,
+    }
+  })
+}
 
 
 /*修改密码*/

@@ -1,13 +1,12 @@
 import request from '@/utils/request'
 
-
 /*用户登录*/
 export function login(params) {
   return request({
     url: '/LogIn/User',
     method: 'post',
     params: {
-      User: params.user,
+      UserId: params.user,
      Password: params.pass
    }
   })
@@ -15,7 +14,7 @@ export function login(params) {
 /*拿验证码*/
 export function code() {
   return request({
-    url: '/LogIn',
+    url: '/Login',
     method: 'get'
   })
 }

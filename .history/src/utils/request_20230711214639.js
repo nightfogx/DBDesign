@@ -8,7 +8,7 @@ axios.defaults.headers.common['Authorization'] = 'Bearer '
 
 // create an axios instance
 const service = axios.create({
-  baseURL: 'http://110.42.220.245:8081',//这个应该是把后端部署了
+  baseURL: '',//这个应该是把后端部署了
   timeout: 50000, // request timeout
   //withCredentials: true//携带cookie
   async: true,

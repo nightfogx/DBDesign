@@ -85,12 +85,12 @@ export default {
     submitForm() {
       console.log("点击了登录键")
       //请求地址,this和vm指的是全局
-      let params = qs.stringify({
+      let params = {
         user: this.loginForm.userid,
         pass: this.loginForm.password,
-      })
+      }
       console.log(params)
-      login(params).then((res) => {
+      login(qs.stringify(params)).then((res) => {
         console.log(res.data)
         if (res.data === false) {
           console.log("登录失败")

@@ -17,8 +17,7 @@
 </template>
 
 <script>
-
-import qs from 'qs'
+import qs from 'qs';
 import { login } from '@/api/login.js'
 import { code } from '@/api/login.js'
 import * as icons from '@element-plus/icons-vue';
@@ -85,9 +84,9 @@ export default {
     submitForm() {
       console.log("点击了登录键")
       //请求地址,this和vm指的是全局
-      let params = qs.stringify({
-        user: this.loginForm.userid,
-        pass: this.loginForm.password,
+      let params =qs.stringify( {
+        "user": this.loginForm.userid,
+        "pass": this.loginForm.password,
       })
       console.log(params)
       login(params).then((res) => {

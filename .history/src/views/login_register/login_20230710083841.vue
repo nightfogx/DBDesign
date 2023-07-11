@@ -17,10 +17,7 @@
 </template>
 
 <script>
-
-import qs from 'qs'
 import { login } from '@/api/login.js'
-import { code } from '@/api/login.js'
 import * as icons from '@element-plus/icons-vue';
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -85,10 +82,10 @@ export default {
     submitForm() {
       console.log("点击了登录键")
       //请求地址,this和vm指的是全局
-      let params = qs.stringify({
+      let params = {
         user: this.loginForm.userid,
         pass: this.loginForm.password,
-      })
+      }
       console.log(params)
       login(params).then((res) => {
         console.log(res.data)
@@ -103,20 +100,8 @@ export default {
       })
     },
   },
-  created() {
-      console.log("尝试拿到验证码")
-      //请求地址,this和vm指的是全局
-      code().then((res) => {
-        console.log(res.data)
-        if (res.data === false) {
-          console.log("拿数据失败")
-        }
-        else {
-          console.log("拿数据成功")
-        }
-      })
-    },
-  };
+
+};
 </script>
 
 <style scoped>

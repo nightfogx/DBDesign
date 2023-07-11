@@ -12,7 +12,7 @@ const service = axios.create({
   timeout: 50000, // request timeout
   //withCredentials: true//携带cookie
   async: true,
-  crossDomain: true,
+  //crossDomain: true,
 })
 //   // request interceptor
 // service.interceptors.request.use(

@@ -1,5 +1,5 @@
 import axios from 'axios'
-axios.defaults.headers.common['Authorization'] = 'Bearer ' 
+
 // import { getToken } from '@/utils/auth'
 
 // 每次请求携带cookies信息
@@ -8,11 +8,14 @@ axios.defaults.headers.common['Authorization'] = 'Bearer '
 
 // create an axios instance
 const service = axios.create({
+  //baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
+  //baseURL:'https://localhost:5001',
   baseURL: 'http://110.42.220.245:8081',//这个应该是把后端部署了
+  // withCredentials: true, // send cookies when cross-domain requests
   timeout: 50000, // request timeout
   //withCredentials: true//携带cookie
-  async: true,
-  crossDomain: true,
+  //async: true,
+  //crossDomain: true,
 })
 //   // request interceptor
 // service.interceptors.request.use(
