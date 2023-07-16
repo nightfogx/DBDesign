@@ -5,5 +5,7 @@ export function pictureget() {
     return request({
       url: '/DeviceType',
       method: 'get',
+      params: {
+      }
     })
   }

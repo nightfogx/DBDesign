@@ -138,7 +138,6 @@ import { pictureget } from '@/api/picture';
 export default {
   data() {
     return {
-  
       images: [],
       activeIndex: ref('1'),
       products: []
@@ -153,10 +152,11 @@ export default {
           this.$message.error("获得失败");
         }
         else {
-          console.log(res.data)
+          console.log(res.data.DeviceType)
           this.$message.success("获得成功");
-          this.products=JSON.parse(res.data.DeviceType)
-          this.images=JSON.parse(res.data.DeviceType)
+          this.products=res.data.DeviceType
+          console.log(this.products)
+          this.images=res.data
           console.log(this.images)
         }
       })

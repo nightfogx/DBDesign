@@ -10,7 +10,7 @@ export function login(params) {
       'Content-Type': 'application/json'
     },
     data: {
-      UserId: params.user,
+      User: params.user,
       Password: params.pass
     }
   })

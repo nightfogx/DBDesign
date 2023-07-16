@@ -11,11 +11,16 @@
       <!-- 推荐商品 -->
       <el-main>
         <!--卡片推送-->
-       <el-carousel :interval="4000" type="card" height="200px">
+       <!-- <el-carousel :interval="4000" type="card" height="200px">
           <el-carousel-item v-for="(image, index) in images" :key="index">
             <img :src="image" alt="轮播图片">
           </el-carousel-item>
-        </el-carousel>
+        </el-carousel>-->
+        <el-carousel :interval="4000" type="card" height="300px">
+    <el-carousel-item v-for="item in 6" :key="item">
+      <h3 text="2xl" justify="center">{{ item }}</h3>
+    </el-carousel-item>
+  </el-carousel>
         <!---->
         <!--日活统计-->
         <el-row :gutter="16">
@@ -138,7 +143,6 @@ import { pictureget } from '@/api/picture';
 export default {
   data() {
     return {
-  
       images: [],
       activeIndex: ref('1'),
       products: []
@@ -154,10 +158,11 @@ export default {
         }
         else {
           console.log(res.data)
+          console.log(res.data.Num)
+          console.log(res.data.DeviceType)
           this.$message.success("获得成功");
-          this.products=JSON.parse(res.data.DeviceType)
-          this.images=JSON.parse(res.data.DeviceType)
-          console.log(this.images)
+          this.products=res.data.DeviceType
+          this.images=res.data
         }
       })
   }

@@ -155,8 +155,9 @@ export default {
         else {
           console.log(res.data)
           this.$message.success("获得成功");
-          this.products=JSON.parse(res.data.DeviceType)
-          this.images=JSON.parse(res.data.DeviceType)
+          this.products=res.data.DeviceType
+          console.log(this.products)
+          this.images=res.data.DeviceType
           console.log(this.images)
         }
       })
