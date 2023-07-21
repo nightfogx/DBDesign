@@ -110,7 +110,7 @@ export default {
         id: '7',
         icon: Setting,
         title: '账户设置',
-        router: '',
+        router: 'PersonalSettings',
         Subclass: []
       }]
     const menu = reactive(Array)

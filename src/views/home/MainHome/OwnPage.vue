@@ -13,13 +13,24 @@
                 <el-row class="my-row">
                     <span style="font-size: 20px;">个性签名</span>
                 </el-row>
-                <el-row class="my-row">
+                <el-row class="my-row" v-if="isshowSignature">
                     <span style="font-size: 15px;">{{ signature }}</span>
+                </el-row>
+                <el-row class="my-row" v-else>
+                    <el-row>
+                        <el-input v-model="signature" placeholder="请输入个性签名"></el-input>
+                    </el-row>
+                    <el-row>
+                        <el-button type="primary" @click="saveSignature">保存</el-button>
+                        <el-button type="default" @click="cancelSignature">取消</el-button>
+                    </el-row>
+
                 </el-row>
             </el-col>
             <el-col :span="10" class="button-col">
                 <el-button class="edit-avatar-button" type="primary" @click="showAvatarDialog">更换头像</el-button>
-                <el-button class="edit-signature-button" type="primary" @click="showSignatureDialog = true">编辑个性签名</el-button>
+                <el-button class="edit-signature-button" type="primary"
+                    @click="isshowSignature = !isshowSignature">编辑个性签名</el-button>
             </el-col>
         </el-row>
     </div>
@@ -223,10 +234,11 @@ const iconStyle = computed(() => {
 export default {
     data() {
         return {
+            isshowSignature: true,
             editMode: false,
-            editSignature:false,
+            editSignature: false,
             avatarUrl: "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png",
-            signature: "暂未设置个性签名，请按编辑按钮进行编辑！",
+            signature: "暂未设置个性签名！",
             username: "John Doe",
             userInfo: {// 用户信息...
                 id: "123",
@@ -262,7 +274,15 @@ export default {
         showSignatureDialog() {
             // 在这里显示一个对话框或者表单，让用户输入新的个性签名信息
             // 处理用户输入后，更新 signature
+            this.isshowSignature = !this.isshowSignature;
         },
+        saveSignature() {
+            this.isshowSignature = !this.isshowSignature;
+        },
+        cancelSignature() {
+            this.isshowSignature = !this.isshowSignature;
+        }
+
     },
     computed: {
         iconStyle() {
@@ -285,7 +305,7 @@ export default {
 }
 </script>
       
-<style scoped>
+<style>
 .PageTop {
     border: 1px solid #ccc;
     width: 1400px;

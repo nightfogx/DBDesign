@@ -51,7 +51,12 @@ const routes = [
         path: '/MyAddress',
         name: 'MyAddress',
         component: () => import(/*webpackChunkName:'MyAddress'*/ '../views/home/MailAddress/MyAddress.vue')
-      }
+      },
+      {//账户设置
+        path: '/PersonalSettings',
+        name: 'PersonalSettings',
+        component: () => import(/*webpackChunkName:'PersonalSettings'*/ '../views/home/PersonalSettings/PersonalSettings.vue')
+      },
     ]
   },
 
