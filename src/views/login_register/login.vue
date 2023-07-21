@@ -82,6 +82,7 @@ export default {
     // 提交表单
     submitForm() {
       console.log("点击了登录键")
+      this.$router.push('/mainpage')
       //请求地址,this和vm指的是全局
       let params ={
         user: this.loginForm.userid,

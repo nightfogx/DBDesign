@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import mainpage from '../views/mainpage.vue'
 import loginMain from '../views/login_register/loginMain'
 
@@ -113,8 +113,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHashHistory(),
+  routes,
 })
 
 export default router

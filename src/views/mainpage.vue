@@ -11,10 +11,10 @@
       <!-- 推荐商品 -->
       <el-main>
         <!--卡片推送-->
-       <el-carousel :interval="4000" type="card" height="200px">
+       <el-carousel :interval="4000" type="card" height="200px"  @click="goToDetailsPage">
           <el-carousel-item v-for="(image, index) in images" :key="index">
             <img :src="image" alt="轮播图片">
-          </el-carousel-item>
+          </el-carousel-item> 
         </el-carousel>
         <!---->
         <!--日活统计-->
@@ -104,10 +104,10 @@
           </el-col>
         </el-row>
         <!---->
-        <el-row class="recommend-products">
+        <el-row class="recommend-products" >
           <el-col :span="8" v-for="(product, index) in products" :key="index">
             <el-col :span="23">
-              <el-card shadow="hover">
+              <el-card shadow="hover"  @click="goToDetailsPage">
                 <div class="product-card">
                   <img :src="product.img" alt="product image">
                   <div class="product-info">
@@ -147,6 +147,12 @@ export default {
   components: {
     "seach": header,
   },
+  methods: {
+        goToDetailsPage() {
+        console.log("到这")
+        this.$router.push({ name: 'DetailsPage' });
+        }
+    },
  created() {
   pictureget().then((res) => {
         if (res.data === false) {
