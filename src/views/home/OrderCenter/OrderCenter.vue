@@ -48,9 +48,23 @@
 <script>
 import { reactive, ref } from 'vue'
 import { ElMessageBox } from 'element-plus'
+import { getOrderInfo } from '@/api/order.js'
 const detailClick = ref(false)
 const deleteClick = ref(false)
 export default {
+    create() {
+        console.log("尝试拿到订单信息")
+        //请求地址,this和vm指的是全局
+        getOrderInfo().then((res) => {
+            console.log(res.data)
+            if (res.data === false) {
+                console.log("拿数据失败")
+            }
+            else {
+                console.log("拿数据成功")
+            }
+        })
+    },
     setup() {
         const res = reactive([
             {

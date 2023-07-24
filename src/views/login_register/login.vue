@@ -9,6 +9,7 @@
     </ElFormItem>
     <ElFormItem prop="code">
       <el-input placeholder="请输入验证码" :prefix-icon="icons.QuestionFilled" v-model="loginForm.code" size="large"></el-input>
+      <img :src="imageUrl" alt="图片描述">
     </ElFormItem>
     <ElFormItem>
       <ElButton type="primary" class="login-btn" size="large" @click="submitForm">登录</ElButton>
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       icons: icons,
+      imageUrl: "",
       // 表单信息
       loginForm: {
         // 账户数据
@@ -111,7 +113,8 @@ export default {
           console.log("拿数据失败")
         }
         else {
-          console.log("拿数据成功")
+          this.imageUrl=res.data.CodeImage
+          console.log("拿数据成功 ")
         }
       })
     },
@@ -137,7 +140,6 @@ export default {
 }
 
 .login-title {
-
   /*设置字体*/
   font-size: 60px;
   /*设置字体大小*/

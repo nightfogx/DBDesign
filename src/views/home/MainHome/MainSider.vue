@@ -1,37 +1,37 @@
 <template>
-    <!-- 侧边栏 -->
-    
-    <div class="sidebar-cont">
-      <el-menu :default-active="ac_index" @select="Select">
-        <div v-for="(item, index) in menu" :key="index">
-          <router-link :to="{ path: item.router }">
-            <el-menu-item v-if="item.Subclass.length == 0" :index="item.id">
-              <el-icon>
-                <component :is="item.icon"></component>
-              </el-icon>
-              <span style="font-size:15px">{{ item.title }}</span>
-            </el-menu-item>
-            <p></p>
-          </router-link>
-          <!-- 二级 -->
-          <el-sub-menu v-if="item.Subclass.length > 0" :index="item.id">
-            <template #title>
-              <el-icon>
-                <component :is="item.icon"></component>
-              </el-icon>
-              <span  style="font-size:15px">{{ item.title }}</span>
-            </template>
-            <div v-for="(two, index_two) in item.Subclass" :key="index_two">
-              <router-link :to="{ path: two.router }">
-                <el-menu-item  style="font-size:12px" :index="two.id">{{ two.title }}</el-menu-item>
-              </router-link>
-            </div>
-          </el-sub-menu>
+  <!-- 侧边栏 -->
+
+  <div class="sidebar-cont">
+    <el-menu :default-active="ac_index" @select="Select">
+      <div v-for="(item, index) in menu" :key="index">
+        <router-link :to="{ path: item.router }">
+          <el-menu-item v-if="item.Subclass.length == 0" :index="item.id">
+            <el-icon>
+              <component :is="item.icon"></component>
+            </el-icon>
+            <span style="font-size:15px">{{ item.title }}</span>
+          </el-menu-item>
           <p></p>
-        </div>
-      </el-menu>
-    </div>
-    <router-view></router-view>
+        </router-link>
+        <!-- 二级 -->
+        <el-sub-menu v-if="item.Subclass.length > 0" :index="item.id">
+          <template #title>
+            <el-icon>
+              <component :is="item.icon"></component>
+            </el-icon>
+            <span style="font-size:15px">{{ item.title }}</span>
+          </template>
+          <div v-for="(two, index_two) in item.Subclass" :key="index_two">
+            <router-link :to="{ path: two.router }">
+              <el-menu-item style="font-size:12px" :index="two.id">{{ two.title }}</el-menu-item>
+            </router-link>
+          </div>
+        </el-sub-menu>
+        <p></p>
+      </div>
+    </el-menu>
+  </div>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -64,7 +64,7 @@ export default {
     const ac_index = ref('1')
 
     const Array = [
-    {
+      {
         id: '1',
         icon: House,
         title: '个人主页',
@@ -76,7 +76,16 @@ export default {
         icon: Tickets,
         title: '我的订单',
         router: 'OrderCenter',
-        Subclass: []
+        Subclass: [{
+          id: '2-1',
+          title: '回收订单',
+          router: 'OrderCenter',
+        },
+        {
+          id: '2-2',
+          title: '维修订单',
+          router: 'OrderCenter',
+        }]
       },
       {
         id: '3',
@@ -110,7 +119,7 @@ export default {
         id: '7',
         icon: Setting,
         title: '账户设置',
-        router: '',
+        router: 'PersonalSettings',
         Subclass: []
       }]
     const menu = reactive(Array)
@@ -149,5 +158,4 @@ export default {
 a {
   text-decoration: none;
 }
-
 </style>

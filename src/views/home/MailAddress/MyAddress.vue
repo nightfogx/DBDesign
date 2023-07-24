@@ -11,7 +11,21 @@
 
 <script>
 import { ElMessageBox } from 'element-plus'
+import { getLocationInfo } from '@/api/location.js'
 export default {
+    create() {
+        console.log("尝试拿到地址信息")
+        //请求地址,this和vm指的是全局
+        getLocationInfo().then((res) => {
+            console.log(res.data)
+            if (res.data === false) {
+                console.log("拿数据失败")
+            }
+            else {
+                console.log("拿数据成功")
+            }
+        })
+    },
     setup() {
         const tableData = [
             {
